@@ -14,8 +14,8 @@ public class Login_StepDefinitions {
     @Given("user is on the wikipedia page")
     public void userIsOnTheWikipediaPage() throws InterruptedException {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
+        options.addArguments("--headless=new");
 
         options.addArguments("--headless");
 
