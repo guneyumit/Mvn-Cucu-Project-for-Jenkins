@@ -41,7 +41,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh "mvn -f pom.xml test"
-                sh "mvn clean verify -Dcucumber.filter.tags='$params.TagName' -DfailIfNoTests=false"
+                sh "mvn clean verify -Dcucumber.filter.tags='@wip' -DfailIfNoTests=false"
             }
 //             post {
 //                 always {
