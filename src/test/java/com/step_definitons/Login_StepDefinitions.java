@@ -1,5 +1,6 @@
 package com.step_definitons;
 
+import com.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -47,5 +48,6 @@ public class Login_StepDefinitions {
     @Given("user is one the library login page")
     public void userIsOneTheLibraryLoginPage() {
         System.out.println("User is on the library login page");
+        Driver.getDriver().get("https://wikipedia.org");
     }
 }

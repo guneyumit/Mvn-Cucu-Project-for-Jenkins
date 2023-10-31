@@ -10,19 +10,21 @@ import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import java.time.Duration;
+
 public class Hooks {
     // we import from io.cucumber.java not from junit
     @Before(order = 1)
     public void setupScenario() {
         System.out.println("======Setting up browser using cucumber @Before");
-        Driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
+        Driver.getDriver();
 
     }
 
     @Before(value = "@login", order = 2)
     public void setupScenarioLogins() {
         System.out.println("======this will only apply to scenarios with @login tag");
-        Driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
+        Driver.getDriver();
 
     }
 
