@@ -1,14 +1,16 @@
 package com.pages;
 
-import com.utilities.Driver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class WikipediaSearchPage {
 
-    public WikipediaSearchPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
+    public WikipediaSearchPage(WebDriver driver) {
+
+
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(id = "searchInput")

@@ -1,10 +1,12 @@
 package com.step_definitons;
 
-import com.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Login_StepDefinitions {
     @When("user enters librarian username")
@@ -45,9 +47,14 @@ public class Login_StepDefinitions {
     }
 
 
-    @Given("user is one the library login page")
-    public void userIsOneTheLibraryLoginPage() {
-        System.out.println("User is on the library login page");
-        Driver.getDriver().get("https://wikipedia.org");
+    @Given("user is on the page")
+    public void userIsOnThePage() throws InterruptedException {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://wikipedia.org");
+        String title = "Wikipedia";
+        Assert.assertEquals(title, driver.getTitle());
+        Thread.sleep(5000);
+
+        driver.close();
     }
 }
