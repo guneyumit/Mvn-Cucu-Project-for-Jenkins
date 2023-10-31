@@ -15,7 +15,7 @@ pipeline {
     // }
     
     parameters {
-        string(name: 'TagName', defaultValue: "@employee", description: 'Scenario Tag to be run')
+        string(name: 'TagName', defaultValue: "@wip", description: 'Scenario Tag to be run')
     }
     
     stages {
