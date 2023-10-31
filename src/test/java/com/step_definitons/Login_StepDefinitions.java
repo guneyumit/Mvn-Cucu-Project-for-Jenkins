@@ -15,6 +15,19 @@ public class Login_StepDefinitions {
     public void userIsOnTheWikipediaPage() throws InterruptedException {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+
+        options.addArguments("--headless");
+
+        options.addArguments("--disable-logging");
+
+        options.addArguments("--output=/home/james/chrome.logs");
+
+        options.addArguments("--disable-dev-shm-usage");
+
+        options.addArguments("--usr-data-dir=/home/james/chrome_data.logs");
+
+        options.addArguments("--disable-logging");
 
         WebDriver driver = new ChromeDriver(options);
         driver.get("https://wikipedia.org");
