@@ -1,15 +1,12 @@
 @Regression @smoke @login
-Feature: Library app login feature
+Feature: Wikipedia app login feature
   User Story:
-  As a user, I should be able to login with correct credentials to different
-  accounts. And dashboard should be displayed.
-
-  Accounts are: librarian, student, admin
+  As a user, I should be able to ...
 
 
   @wip
   Scenario: Login as student
-    Given user is on the page
+    Given user is on the wikipedia page
 
 
 
