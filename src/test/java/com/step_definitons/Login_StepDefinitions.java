@@ -8,13 +8,17 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Login_StepDefinitions {
 
     @Given("user is on the wikipedia page")
-    public void userIsOnTheWikipediaPage() throws InterruptedException {
+    public void userIsOnTheWikipediaPage() throws InterruptedException, MalformedURLException {
         WebDriver driver;
-
+/*
         //System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
 
         ChromeOptions options = new ChromeOptions();
@@ -30,6 +34,14 @@ public class Login_StepDefinitions {
 
 
         driver = new ChromeDriver(options);
+
+
+ */
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setCapability("browserVersion", "119.0.6045.105");
+        chromeOptions.setCapability("platformName", "Linux");
+        driver = new RemoteWebDriver(new URL("https://wikipedia.org"), chromeOptions);
+
         driver.get("https://wikipedia.org");
 
         String title = "Wikipedia";
