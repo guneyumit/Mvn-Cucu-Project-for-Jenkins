@@ -47,6 +47,8 @@ public class Login_StepDefinitions {
         String title = "Wikipedia";
         Assert.assertEquals("Page title NOT verified !!!", title, driver.getTitle());
 
+        System.out.println("Page title appeared");
+
         Thread.sleep(3000);
 
         driver.close();
