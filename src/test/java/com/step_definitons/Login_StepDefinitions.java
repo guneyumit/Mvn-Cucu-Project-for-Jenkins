@@ -26,6 +26,8 @@ public class Login_StepDefinitions {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--usr-data-dir=/home/james/chrome_data.logs");
         options.addArguments("--disable-logging");
+        options.setCapability("browserVersion", "119.0.6045.105");
+
 
         driver = new ChromeDriver(options);
         driver.get("https://wikipedia.org");
