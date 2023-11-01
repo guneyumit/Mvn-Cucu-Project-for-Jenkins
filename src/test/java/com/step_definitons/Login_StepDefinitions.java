@@ -18,13 +18,12 @@ public class Login_StepDefinitions {
     @Given("user is on the wikipedia page")
     public void userIsOnTheWikipediaPage() throws InterruptedException, MalformedURLException {
         WebDriver driver;
-/*
+
         //System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
-        //options.addArguments("--headless=new");
-        //options.addArguments("headless");
+        options.addArguments("--headless=new");
         options.addArguments("--disable-logging");
         options.addArguments("--output=/home/james/chrome.logs");
         options.addArguments("--disable-dev-shm-usage");
@@ -35,13 +34,14 @@ public class Login_StepDefinitions {
 
         driver = new ChromeDriver(options);
 
-
- */
+        /*
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setCapability("browserVersion", "119.0.6045.105");
         chromeOptions.setCapability("platformName", "Linux");
         driver = new RemoteWebDriver(new URL("https://wikipedia.org"), chromeOptions);
 
+
+         */
         driver.get("https://wikipedia.org");
 
         String title = "Wikipedia";
